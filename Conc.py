@@ -24,12 +24,14 @@ def conciertos2():
 	lista=[]
 	lista2=[]
 	lista3=[]
+	lista4=[]
 	if r.status_code==200:
 		doc = json.loads(r.text)
 		for event in doc["events"]["event"]:
 			lista.append(event["title"])
 			lista2.append(event["start_time"])
-			lista3.append(event[""])
-	return template("template2.tpl", lista=lista, lista2=lista2)
+			lista3.append(event["city_name"])
+			lista4.append(event["country_name"])
+	return template("template2.tpl", lista=lista, lista2=lista2, lista3=lista3, lista4=lista4)
 
 run(host='localhost', port=8080, debug=True, reloader=True)
