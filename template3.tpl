@@ -10,14 +10,9 @@
               <h1 class="bnr-title">La buena música, a tu alcanze</span></h1>
 
               <h2 class="bnr-sub-title">¡Busca tus grupos favoritos!</h2>
-		% for i,t,c,p in zip(lista, lista2, lista3, lista4):
-              <p class="bnr-para"> {{i}},<br> a las {{t}},<br> en {{c}},{{p}}"</a></p>
-		%end
-		<h1 class="bnr-title">Listado de musicas relacionadas</h1>
-		% for k,l in zip(titles, ids):
-	<iframe width="560" height="315" src="https://www.youtube.com/embed/{{l}}" frameborder="0" allowfullscreen>{{k}}</iframe>
-	    	</p>
-	    %end
+                % for i,t in zip(ids, titles):
+              <p class="bnr-para"> {{i}},<br>{{t}}</p>
+            %end
               <div class="overlay-detail">
 
               </div>
@@ -28,9 +23,8 @@
 
         </div>
 
-	   </div>
+           </div>
 
       </div>
-
-    </div>
+</div>
 %include('foot.tpl')
