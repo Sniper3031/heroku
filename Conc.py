@@ -8,7 +8,6 @@ import os
 import sys
 import urllib
 import urllib2
-import webapp2
 from sys import argv
 from apiclient.discovery import build
 reload(sys)
