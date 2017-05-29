@@ -6,10 +6,7 @@ import requests
 import json
 import os
 import sys
-import urllib
-import urllib2
 from sys import argv
-from apiclient.discovery import build
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
