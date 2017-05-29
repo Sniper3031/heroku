@@ -16,6 +16,8 @@ from optparse import OptionParser
 reload(sys)
 sys.setdefaultencoding("utf-8")
 
+bottle.debug(True)
+
 key=os.environ['key']
 url_base="https://api.eventful.com/json/events/search?"
 
@@ -73,4 +75,6 @@ def conciertos2():
 def server_static(filepath):
     return static_file(filepath, root='static')
 
-run(host='0.0.0.0', port=argv[1]), debug=True, reloader=True)
+run(host='0.0.0.0', port=argv[1])
+
+#run(host='localhost', port=8080, debug=True, reloader=True)
