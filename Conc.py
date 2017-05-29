@@ -73,4 +73,4 @@ def conciertos2():
 def server_static(filepath):
     return static_file(filepath, root='static')
 
-run(host='localhost', port=argv[1]), debug=True, reloader=True)
+run(host='0.0.0.0', port=argv[1]), debug=True, reloader=True)
