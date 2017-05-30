@@ -26,7 +26,6 @@ def conciertos2():
 	group = request.forms.get('group')
 	payload = {'keywords':group, 'app_key':key}
 	r = requests.get(url_base,params=payload)
-	print r.url
 	lista=[]
 	lista2=[]
 	lista3=[]
@@ -39,7 +38,6 @@ def conciertos2():
 	quantity=3
 	payload2={"part":part,"key":ytkey, "q": group, "maxResults":quantity, "type":video}
 	r2=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload2)
-	print r2.url
 	if r.status_code==200 and r2.status_code==200:
 		data=json.loads(r2.text.encode('utf-8'))
 		for i in data['items']:
