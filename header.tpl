@@ -26,7 +26,7 @@
 
     <link rel="stylesheet" type="text/css" href="/static/css/style.css">
 
-    <link rel="shorcut icon" type="image/png" href="http://www.pngall.com/wp-content/uploads/2016/06/Earth-Free-Download-PNG.png"/>
+    <link rel="icon" href="http://www.pngall.com/wp-content/uploads/2016/06/Earth-Free-Download-PNG.png"/>
 
     <!-- =======================================================
 
