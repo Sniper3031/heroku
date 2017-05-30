@@ -44,8 +44,7 @@ def conciertos2():
 			ids.append(i['id']['videoId'])
 			titles.append(i['snippet']['title'])
 		
-		doc = json.loads(r.text.encode('utf-8'))
-		print doc
+		doc = json.loads(r.text.encode('utf-8')
 		if doc["events"]: 
 
 			for event in doc["events"]["event"]:
