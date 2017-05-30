@@ -45,8 +45,7 @@ def conciertos2():
 			titles.append(i['snippet']['title'])
 		
 		doc = json.loads(r.text.encode('utf-8'))
-
-		if doc["events"]: 
+		if doc["events"] == True : 
 
 			for event in doc["events"]["event"]:
 				lista.append(event["title"])
