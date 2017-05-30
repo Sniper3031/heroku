@@ -7,7 +7,6 @@ import json
 import os
 import sys
 from sys import argv
-reload(sys)
 sys.setdefaultencoding("utf-8")
 
 bottle.debug(True)
@@ -45,7 +44,7 @@ def conciertos2():
 			titles.append(i['snippet']['title'])
 		
 		doc = json.loads(r.text.encode('utf-8'))
-		if doc["events"] == True : 
+		if doc["events"]: 
 
 			for event in doc["events"]["event"]:
 				lista.append(event["title"])
