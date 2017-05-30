@@ -16,7 +16,11 @@
 	    <br>
             <input style="background-color:black; type="text" name="group" required/>
             <br>
-            <input class="btn btn-download" type="submit" value="Buscar" required/>
+	    <label>Localizacion(En inglés):</label>
+	    <br>
+	    <input style="background-color:black; type="text" name="loc" required/>
+            <br>
+	    <input class="btn btn-download" type="submit" value="Buscar" required/>
 </form>
 </p>
 

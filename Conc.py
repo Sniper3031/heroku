@@ -22,7 +22,8 @@ def conciertos():
 @route ("/conciertos/result", method="post")
 def conciertos2():
 	group = request.forms.get('group')
-	payload = {'keywords':group, 'app_key':key}
+	loc = request.forms.get('loc')
+	payload = {'keywords':group,'location':loc,'app_key':key}
 	r = requests.get(url_base,params=payload)
 	lista=[]
 	lista2=[]
@@ -51,9 +52,9 @@ def conciertos2():
 				lista3.append(event["city_name"])
 				lista4.append(event["country_name"])
 		else:
-			return template("templateERROR.tpl")
+			return template("templateERROR.tpl", titles=titles, ids=ids)
 	else:
-		return template("templateERROR.tpl")
+		return template("templateERROR.tpl", titles=titles, ids=ids)
 		
 
 	
