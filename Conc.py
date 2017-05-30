@@ -7,7 +7,6 @@ import json
 import os
 import sys
 from sys import argv
-sys.setdefaultencoding("utf-8")
 
 bottle.debug(True)
 
