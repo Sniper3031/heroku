@@ -15,6 +15,44 @@ url_base="https://api.eventful.com/json/events/search?"
 
 group = ""
 
+@route("/", method="get")
+def raiz():
+	return template("template0.tpl")
+
+
+@route("/musica", method="get")
+def musica():
+	return template("templatemu.tpl")
+
+@route ("/musica/result", method="post")
+def musica2():
+	group = request.forms.get('group')
+	titles=[]		
+	ids=[]
+	ytkey=os.environ["ytkey"] 
+	video="video"
+	part="id,snippet"
+	quantity=20
+	payload={"part":part,"key":ytkey, "q": group, "maxResults":quantity, "type":video}
+	r=requests.get('https://www.googleapis.com/youtube/v3/search',params=payload)
+	if r.status_code==200:
+		data=json.loads(r.text.encode('utf-8'))
+		for i in data['items']:
+			ids.append(i['id']['videoId'])
+			titles.append(i['snippet']['title'])
+		
+	else:
+		return template("templateERRORmu.tpl")
+		
+
+	
+	return template("templatemuresult.tpl", titles=titles, ids=ids)
+
+
+
+
+
+
 @route("/conciertos", method="get")
 def conciertos():
      return template("template1.tpl")
@@ -65,6 +103,6 @@ def conciertos2():
 def server_static(filepath):
     return static_file(filepath, root='static')
 
-run(host='0.0.0.0', port=argv[1])
+#run(host='0.0.0.0', port=argv[1])
 
-#run(host='localhost', port=8080, debug=True, reloader=True)
+run(host='localhost', port=8080, debug=True, reloader=True)

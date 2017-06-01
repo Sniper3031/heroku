@@ -88,15 +88,17 @@
 
               </button>
 
-              <a class="navbar-brand" href="#">Busca<span class="logo-dec">Conciertos</span></a>
+                <a class="navbar-brand" href="#">Busca<span class="logo-dec">Conciertos</span></a>
 
             </div>
 
             <div class="collapse navbar-collapse" id="myNavbar">
 
               <ul class="nav navbar-nav navbar-right">
-
+		
+		<li class="active"><a onclick="play()"href="/">Home</a></li>
                 <li class="active"><a onclick="play()"href="/conciertos">Buscar</a></li>
+		<li class="active"><a onclick="play()"href="/musica">Música</a></li>
               </ul>
 
             </div>
