@@ -106,12 +106,12 @@ def info():
 def info2():
 	info = request.forms.get('info')
 	payload = {'titles':info}
-	r=requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exchars=400&explaintext', params=payload)
+	r3=requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exchars=400&explaintext', params=payload)
 	id2=[]
 	titles2=[]
 	text=[]
 	if r.status_code==200:
-		doc = json.loads(r.text.encode('utf-8'))
+		doc = json.loads(r3.text.encode('utf-8'))
 		for i in doc["query"]["pages"]:
 			id2.append[i]
 			for d in id2:
