@@ -107,13 +107,18 @@ def info2():
 	info = request.forms.get('info')
 	payload = {'titles':info}
 	r=requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exchars=400&explaintext', params=payload)
+	id2=[]
 	titles2=[]
 	text=[]
 	if r.status_code==200:
 		doc = json.loads(r.text.encode('utf-8'))
-		for i in doc:
-			titles2.append(i["title"])
-			text.append(i["extract"])
+		for i in doc["query"]["pages"]:
+			id2.append[i]
+			for d in id2:
+				titles2.append(d["title"])
+				text.append(d["extract"])
+			else:
+				return template("templateERROR.tpl")
 		else:
 			 return template("templateERROR.tpl")
 	else:
