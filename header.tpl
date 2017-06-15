@@ -99,6 +99,7 @@
 		<li class="active"><a onclick="play()"href="/">Home</a></li>
                 <li class="active"><a onclick="play()"href="/conciertos">Buscar</a></li>
 		<li class="active"><a onclick="play()"href="/musica">Música</a></li>
+		<li class="active"><a onclick="play()"href="/info">Info</a></li>
               </ul>
 
             </div>

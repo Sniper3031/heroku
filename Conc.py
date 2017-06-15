@@ -98,6 +98,28 @@ def conciertos2():
 	
 	return template("template2.tpl", lista=lista, lista2=lista2, lista3=lista3, lista4=lista4, titles=titles, ids=ids)
 
+@route("/info", method="get")
+def info():
+	return template("templateinfo.tpl")
+
+@route("/info/result", method="post")
+def info2():
+	info = request.forms.get('info')
+	payload = {'titles':info}
+	r=requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exchars=400&explaintext', params=payload)
+	titles2=[]
+	text=[]
+	if r.status_code==200:
+		doc = json.loads(r.text.encode('utf-8'))
+		for i in doc:
+			titles2.append(i["title"])
+			text.append(i["extract"])
+		else:
+			 return template("templateERROR.tpl")
+	else:
+		 return template("templateERROR.tpl")
+
+	return template("templateinfores.tpl", titles2=titles2, text=text)
 
 @route('/static/<filepath:path>')
 def server_static(filepath):
