@@ -110,7 +110,7 @@ def info2():
 	id2=[]
 	titles2=[]
 	text=[]
-	if r.status_code==200:
+	if r3.status_code==200:
 		doc = json.loads(r3.text.encode('utf-8'))
 		for i in doc["query"]["pages"]:
 			id2.append[i]
