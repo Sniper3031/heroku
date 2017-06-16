@@ -13,7 +13,7 @@
                	
 		 % for i,t in zip(titles2, text):
 		<p>{{i}}<br>{{t}}</p>
-		<p><a href="https://en.wikipedia.org/wiki/{{i}}">Ir a wikipedia</a>
+		<p style="background-color:black;><a href="https://en.wikipedia.org/wiki/{{i}}">Ir a wikipedia</a>
                 %end
               <div class="overlay-detail">
 
