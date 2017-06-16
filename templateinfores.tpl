@@ -12,8 +12,8 @@
               <h2 class="bnr-sub-title">¡Busca tus grupos favoritos!</h2>
                	
 		 % for i,t in zip(titles2, text):
-		<p>{{i}}<br>{{t}}</p>
-		<p style="background-color:black;><a href="https://en.wikipedia.org/wiki/{{i}}">Ir a wikipedia</a></p>
+		<p style="background-color:black;>{{i}}<br>{{t}}</p>
+		<a style="background-color:grease; href="https://en.wikipedia.org/wiki/{{i}}">Ir a wikipedia</a>
                 %end
               <div class="overlay-detail">
 
