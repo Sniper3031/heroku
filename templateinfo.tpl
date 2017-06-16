@@ -14,7 +14,7 @@
               <p><form action="/info/result" method="post">
             <label>Grupo<br>(Nombre inglés):</label>
             <br>
-            <input style="background-color:black; type="text" name="text" required/>
+            <input style="background-color:black; type="text" name="info" required/>
             <br>
             <input class="btn btn-download" type="submit" value="Buscar" required/>
 </form>

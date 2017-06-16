@@ -10,9 +10,10 @@
               <h1 class="bnr-title">La buena música, a tu alcanze</span></h1>
 
               <h2 class="bnr-sub-title">¡Busca tus grupos favoritos!</h2>
-                % for i,t in zip(titles2, text):
-              <p class="bnr-para"> {{i}},<br> a las {{t}},<br> en {{c}},{{p}}"</a></p>
+               	
+		 % for i,t in zip(titles2, text):
 		<p>{{i}}<br>{{t}}</p>
+		<p><a href="https://en.wikipedia.org/wiki/{{i}}">Ir a wikipedia</a>
                 %end
               <div class="overlay-detail">
 

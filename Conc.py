@@ -105,27 +105,26 @@ def info():
 @route("/info/result", method="post")
 def info2():
 	info = request.forms.get('info')
-	payload = {'titles':info}
-	r3=requests.get('https://en.wikipedia.org/w/api.php?action=query&prop=extracts&exchars=400&explaintext', params=payload)
+	srl = 3
+	li = "search"
+	act= "query"
+	fo = "json"
+	payload={ "format":fo,"srlimit":srl, "srsearch":info, "list":li, "action":act }
+	r3=requests.get('https://en.wikipedia.org/w/api.php?',params=payload)
 	id2=[]
 	titles2=[]
 	text=[]
+	print r3.url
 	if r3.status_code==200:
 		doc = json.loads(r3.text.encode('utf-8'))
-		for i in doc["query"]["pages"]:
-			id2.append[i]
-			for d in id2:
-				titles2.append(d["title"])
-				text.append(d["extract"])
-			else:
-				return template("templateERROR.tpl")
-		else:
-			 return template("templateERROR.tpl")
+		for i in doc["query"]["search"]:
+			titles2.append(i["title"])
+			text.append(i["snippet"])
 	else:
 		 return template("templateERROR.tpl")
 
 	return template("templateinfores.tpl", titles2=titles2, text=text)
-
+	
 @route('/static/<filepath:path>')
 def server_static(filepath):
     return static_file(filepath, root='static')
