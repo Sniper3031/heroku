@@ -11,7 +11,7 @@
 
               <h2 class="bnr-sub-title">¡Busca tus grupos favoritos!</h2>
                 % for i,t in zip(ids, titles):
-              <p class="bnr-para"> {{i}},<br>{{t}}</p>
+              <p style="background-color:black;" class="bnr-para"> {{i}},<br>{{t}}</p>
             %end
               <div class="overlay-detail">
 

@@ -12,8 +12,8 @@
 
               <h2 class="bnr-sub-title">¡Busca tus grupos favoritos!</h2>
 		% for i,t,c,p in zip(lista, lista2, lista3, lista4):
-              <p class="bnr-para"> {{i}},<br> a las {{t}},<br> en {{c}},{{p}}"</a></p>
-		<a href="https://twitter.com/share?url=google.com&text=Voy al concierto {{i}} en {{c}},{{p}}!">Tweet</a>
+              <p style="background-color:black;"  class="bnr-para"> {{i}},<br> a las {{t}},<br> en {{c}},{{p}}"</a></p>
+		<a style="background-color:black;" href="https://twitter.com/share?url=google.com&text=Voy al concierto {{i}} en {{c}},{{p}}!">Tweet</a>
 		%end
 		<h1 class="bnr-title">Listado de musicas relacionadas</h1>
 		% for k,l in zip(titles, ids):
